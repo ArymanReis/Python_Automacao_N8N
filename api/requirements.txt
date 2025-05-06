@@ -1,0 +1,4 @@
+#Bibliotecas
+requests
+pandas
+streamlit
