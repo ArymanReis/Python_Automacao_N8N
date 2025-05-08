@@ -1,11 +1,10 @@
 import requests
 from pprint import pprint
 
-nome = input("Digite um nome para pesquisa:\n")
-url = f"https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}"
+url = "https://servicodados.ibge.gov.br/api/v1/localidades/estados"
 
 params = {
-  "localidade": 33 #RJ
+  "view": "nivelado"
 }
 
 response = requests.get(url, params=params)
@@ -16,4 +15,4 @@ except requests.HTTPError as e:
   resultado = None
 else:
   resultado = response.json()
-  pprint(resultado[0]["res"])
+  pprint(resultado)
